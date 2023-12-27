@@ -14,8 +14,15 @@ go get github.com/YueY4n9/hikvision-sdk
 # Code Test
 
 ```go
+package hikvision_sdk
+
+import (
+	"encoding/json"
+	"testing"
+)
+
 func TestSDK(t *testing.T) {
-	hk := hikvisionOpenAPIGo.HKConfig{
+	hk := HKConfig{
 		Ip:      "127.0.0.1",
 		Port:    443,
 		AppKey:  "28057000",
@@ -23,7 +30,7 @@ func TestSDK(t *testing.T) {
 		IsHttps: true,
 	}
 
-	body := map[string]string{
+	body := map[string]interface{}{
 		"pageNo":   "1",
 		"pageSize": "100",
 	}
