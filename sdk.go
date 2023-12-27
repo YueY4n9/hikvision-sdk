@@ -49,7 +49,7 @@ type Data struct {
 // @url			HTTP接口Url		string	HTTP接口Url，不带协议和端口，如/artemis/api/resource/v1/org/advance/orgList
 // @body		请求参数			map[string]string
 // @return		请求结果			参数类型
-func (hk HKConfig) HttpPost(url string, body map[string]string, timeout int) (result Result, err error) {
+func (hk HKConfig) HttpPost(url string, body map[string]interface{}, timeout int) (result Result, err error) {
 	var header = make(map[string]string)
 	bodyJson, err := json.Marshal(body)
 	if err != nil {
